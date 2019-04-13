@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+/* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body{
+    padding:20px;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red;
+}

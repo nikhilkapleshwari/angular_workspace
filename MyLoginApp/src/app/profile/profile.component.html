@@ -1,0 +1,11 @@
+<p>
+  profile works!
+</p>
+
+<ul>
+<li *ngIf="service.isLoggedIn()"><a (click)="service.logout()" routerLink="/login">Logout</a></li>
+<li *ngIf="service.isLoggedIn() && (service.currentUser().role === 'ADMIN')"><a routerLink="/admin">Admin</a></li>
+<li><a routerLink="/story">Stories</a></li>
+</ul> 
+
+<mat-checkbox>Subscribe</mat-checkbox>
