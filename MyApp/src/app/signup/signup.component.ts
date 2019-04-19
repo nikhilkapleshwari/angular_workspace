@@ -59,8 +59,8 @@ export class SignupComponent implements OnInit {
         localStorage.setItem('token',token);
         this.authService.setUserName(credentials.userName);
         this.router.navigate(['/dashboard']);
-        dialog.find('.bootbox-body').html('<h4>Welcome '+credentials.userName+'!</h4>Now you can add your favourite torrent searches to dashboard.');
-        
+        dialog.find('.bootbox-body').html('<h4>Welcome '+credentials.userName+'!</h4>Now you can add your favourite torrent searches to dashboard and get notification for it.');
+        //bootbox.alert("<h4>Welcome "+credentials.userName+"!</h4>Now you can add your favourite torrent searches to dashboard.");
       }
     },error=>{
       this.invaliSignup=true;
