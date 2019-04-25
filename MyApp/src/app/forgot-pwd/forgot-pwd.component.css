@@ -1,15 +1,5 @@
-.loginForm{
-    position: relative;
-  z-index: 1;
-  background: #FFFFFF;
-  max-width: 480px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
 
-.loginForm input {
+.verifyAccountForm input {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
@@ -20,8 +10,8 @@
     box-sizing: border-box;
     font-size: 14px;
   }
-
-  .loginForm button {
+  
+  .forgotPwdForm button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -35,40 +25,45 @@
     transition: all 0.3 ease;
     cursor: pointer;
   }
-
-
-  .loginForm button:hover,.loginForm button:active,.loginForm button:focus {
+  
+  
+  .forgotPwdForm button:hover,.forgotPwdForm button:active,.forgotPwdForm button:focus {
     background: #43A047;
   }
-
-  .loginForm .message {
+  
+  .forgotPwdForm .message {
     margin: 15px 0 0;
     color: #b3b3b3;
     font-size: 12px;
   }
-
-  .loginForm .message a {
+  
+  .forgotPwdForm .message a {
     color: #4CAF50;
     text-decoration: none;
   }
-
-  .loginForm .forgot {
-    margin: 15px 0 0;
-    color: #4CAF50;
-    font-size: 12px;
-    text-decoration: underline;
-  }
-
-  .loginForm .forgot a {
-    color: #4CAF50;
-    text-decoration: underline;
-  }
-
+  
   .noMargin{
       margin: 0px;
       margin-top: 25px;
   }
-
+  
   .withMargin{
       margin-top: 25px;
+  }
+  
+  .alert{
+    font-family: "Roboto", sans-serif;
+    height: fit-content;
+    font-size: 14px;
+  
+  }
+  
+  .forgotPwdForm .message .disabled-sendvCode a{
+    color: black;
+    font-size: 20px;
+  }
+  
+  .my-success-btn{
+  background: #43A047;
+  color: black;
   }

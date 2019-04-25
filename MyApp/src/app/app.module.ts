@@ -24,11 +24,14 @@ import {MatDialogModule,MatDialog, MatDialogRef} from '@angular/material/dialog'
 import { TorrentDialogComponent } from './torrent-dialog/torrent-dialog.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
 import { AccountVerifyComponent } from './account-verify/account-verify.component';
+import { ForgotPwdComponent } from './forgot-pwd/forgot-pwd.component';
+import { RouteGuardService } from './service/route-guard.service';
+import { PwdResetComponent } from './pwd-reset/pwd-reset.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
-    SearchComponentComponent, ScheduleComponentComponent, NavbarComponent, LoginComponent, DashboardComponent,DialogOverviewComponent, SignupComponent, FooterComponent, TorrentDialogComponent, AccountSettingComponent, AccountVerifyComponent
+    SearchComponentComponent, ScheduleComponentComponent, NavbarComponent, LoginComponent, DashboardComponent,DialogOverviewComponent, SignupComponent, FooterComponent, TorrentDialogComponent, AccountSettingComponent, AccountVerifyComponent, ForgotPwdComponent, PwdResetComponent
   ],
   imports: [
     BrowserModule,
@@ -44,15 +47,17 @@ import { AccountVerifyComponent } from './account-verify/account-verify.componen
     MatCheckboxModule,
     MatDialogModule,
     RouterModule.forRoot([
-      {path:'',component:SearchComponentComponent},
-      {path:'easytapp',component:SearchComponentComponent},
+      {path:'',component:SearchComponentComponent,canActivate:[RouteGuardService]},
+      {path:'easytapp',component:SearchComponentComponent,canActivate:[RouteGuardService]},
+      {path:'forgotpwd',component:SearchComponentComponent,canActivate:[RouteGuardService]},
       {path:'schedule',component:ScheduleComponentComponent,canActivate:[AuthGuardService]},
       {path:'login',component:LoginComponent},
       {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuardService]},
-      {path:'signup',component:SignupComponent}
+      {path:'signup',component:SignupComponent},
+      {path:'pwdreset',component:PwdResetComponent}
     ])
   ],
-  entryComponents: [TorrentDialogComponent,AccountSettingComponent,AccountVerifyComponent],
+  entryComponents: [TorrentDialogComponent,AccountSettingComponent,AccountVerifyComponent,ForgotPwdComponent],
   providers: [AuthGuardService,RestUrlService,{ provide: APP_INITIALIZER, useFactory: RestUrlServiceFactory, deps: [RestUrlService], multi: true }],
   bootstrap: [AppComponent]
 })

@@ -40,6 +40,12 @@ export class AuthServiceService {
     
   }
 
+  resetPassword(credentials){
+    //console.log('In Auth service:'+credentials);
+    return this.http.post(this.restUrlService.getRestUrls("resetPassword"),JSON.stringify(credentials));    
+    
+  }
+
   
   verifyvCode(credentials){
     return this.http.post(this.restUrlService.getRestUrls('verifyAccount'),JSON.stringify(credentials));

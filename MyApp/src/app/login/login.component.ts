@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule,FormGroup,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
 import { AuthServiceService } from './auth-service.service';
 import * as bootbox from '../../../node_modules/bootbox/bootbox.js';
+import {ForgotPwdComponent} from '../forgot-pwd/forgot-pwd.component';
+
 declare var bootbox:any;
 @Component({
   selector: 'app-login',
@@ -13,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   invalidLogin:boolean;
   
-  constructor(private router:Router,private authService:AuthServiceService) { }
+  constructor(private router:Router,private authService:AuthServiceService,public dialog:MatDialog) { }
 
   ngOnInit() {
   }
@@ -73,4 +76,11 @@ export class LoginComponent implements OnInit {
     return this.form.get('password');
   }
 
+  forgotPwd(){
+  
+    const forgotPwdComponent=this.dialog.open(ForgotPwdComponent,{
+       
+    });
+    
+  }
 }

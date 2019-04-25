@@ -28,12 +28,23 @@
         "Url":"http://localhost:8080/changePassword"
     },
     {
+        "ID":"resetPassword",
+        "Url":"http://localhost:8080/resetPassword"
+    },
+    {
         "ID":"verifyAccount",
         "Url":"http://localhost:8080/verifyAccount"
     },
     {
         "ID":"sendvCode",
         "Url":"http://localhost:8080/sendvCode"
+    },
+    {
+        "ID":"initForgotPwdLink",
+        "Url":"http://localhost:8080/initForgotPwdLink"
+    },
+    {
+        "ID":"verifyForgotPwdLink",
+        "Url":"http://localhost:8080/forgotpwd/"
     }
-    
 ]
