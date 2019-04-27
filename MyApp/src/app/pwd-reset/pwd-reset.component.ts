@@ -34,10 +34,11 @@ export class PwdResetComponent implements OnInit {
     }
 
     setPwd(credentials){
-      console.log('credentials:'+JSON.stringify(credentials));
+      console.log('initial credentials:'+JSON.stringify(credentials));
+      console.log('message is:'+this.message);
       credentials['userName']=this.message;
 
-    //console.log(credentials);
+    console.log('final credentials:'+JSON.stringify(credentials));
         
         var dialog = bootbox.dialog({
           message: '<p><i class="fa fa-spin fa-spinner"></i> resetting password...</p>'
