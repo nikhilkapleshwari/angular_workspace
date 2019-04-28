@@ -49,7 +49,7 @@ export class PwdResetComponent implements OnInit {
               this.authService.resetPassword(credentials).subscribe(response=>{
                   console.log('response:'+JSON.stringify(response));
                   console.log('status:'+response.status);
-                  if(response.status===200)
+                  if(response.status===201)
                   dialog.find('.bootbox-body').html('<p>Password reset,Kindly login with new password</p>');
                   else
                   dialog.find('.bootbox-body').html('<p>Something went wrong while password reset.</p>');
