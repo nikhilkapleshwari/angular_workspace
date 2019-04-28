@@ -47,7 +47,9 @@ export class PwdResetComponent implements OnInit {
       dialog.init(()=>{
           setTimeout(()=>{
               this.authService.resetPassword(credentials).subscribe(response=>{
-                  dialog.find('.bootbox-body').html('<p>'+response.json().message+',Kindly login with new password</p>');
+                  console.log(JSON.stringify(response));
+                  //dialog.find('.bootbox-body').html('<p>'+response.json().message+',Kindly login with new password</p>');
+                  dialog.find('.bootbox-body').html('<p>Password reset,Kindly login with new password</p>');
                   this.router.navigate(['/login']);
               },error=>{
                 dialog.find('.bootbox-body').html('<p>'+error.json().message+'</p>');
