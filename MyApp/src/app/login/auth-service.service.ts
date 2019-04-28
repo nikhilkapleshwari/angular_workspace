@@ -61,7 +61,7 @@ export class AuthServiceService {
     if(!token)
       return false;
     let isExpired=jwtHelperService.isTokenExpired(token);
-    // //console.log("isExpired:"+isExpired);
+    //console.log("isExpired:"+isExpired);
     return !isExpired;    
   }
 

@@ -26,19 +26,19 @@ export class ForgotPwdService {
   };
     
     var finalUrl=this.restUrlService.getRestUrls('verifyForgotPwdLink')+token;
-    console.log('finalUrl:'+finalUrl);
+    //console.log('finalUrl:'+finalUrl);
     this.http.get(finalUrl,options)
     .subscribe(response=>{
-      console.log('response:'+response);
+      //console.log('response:'+response);
       if(response){
-        console.log('response:'+JSON.stringify(response));
+        //console.log('response:'+JSON.stringify(response));
         var userName=JSON.parse(JSON.stringify(response)).message;
-        console.log('userName:'+userName);
+        //console.log('userName:'+userName);
         this.changeMessage(userName);
         this.router.navigate(['/pwdreset']);
         }
     },error=>{
-        console.log('err:'+JSON.stringify(error));
+        //console.log('err:'+JSON.stringify(error));
     });
   }
 }

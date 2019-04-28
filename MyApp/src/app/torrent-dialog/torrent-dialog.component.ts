@@ -39,6 +39,6 @@ export class TorrentDialogComponent implements OnInit {
   //   //console.log(this.data.torrentElement);
   //   this.torrentArray=this.data.torrentElement;
   //   //console.log(this.torrentArray[0]);
-  //   ////console.log("torrentElement in dailog:"+JSON.stringify(this.data.torrentElement));
+  //   //console.log("torrentElement in dailog:"+JSON.stringify(this.data.torrentElement));
   // }
 }

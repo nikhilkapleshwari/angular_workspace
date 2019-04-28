@@ -24,14 +24,14 @@ export class ForgotPwdComponent implements OnInit {
     var dialog = bootbox.dialog({
       message: '<p><i class="fa fa-spin fa-spinner"></i> Sending password reset link to email id...</p>'
   });
-    console.log('credentials:'+credentials);
-    console.log(JSON.stringify(credentials));
+    //console.log('credentials:'+credentials);
+    //console.log(JSON.stringify(credentials));
 
     dialog.init(()=>{
       setTimeout(()=>{
         this.http.post(this.restUrlService.getRestUrls('initForgotPwdLink'),JSON.stringify(credentials))
         .subscribe(response=>{
-          console.log('response in initForgotPwd:'+JSON.stringify(response));
+          //console.log('response in initForgotPwd:'+JSON.stringify(response));
           var status=response.text();
           var userName=JSON.parse(JSON.stringify(credentials)).userName;
           if(status==="SUCCESS"){
@@ -43,7 +43,7 @@ export class ForgotPwdComponent implements OnInit {
           this.dialogRef.close();
           
         },error=>{
-          console.log(error);
+          //console.log(error);
           this.dialogRef.close();
           });
       },2000);

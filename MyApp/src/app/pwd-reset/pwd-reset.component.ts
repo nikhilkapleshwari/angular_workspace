@@ -22,7 +22,7 @@ export class PwdResetComponent implements OnInit {
 
   ngOnInit() {
     this.forgotPwdService.currentMessage.subscribe(message=>this.message=message);
-    console.log('userId in pwd-reset:'+this.message);
+    //console.log('userId in pwd-reset:'+this.message);
   }
 
   form = new FormGroup({
@@ -34,11 +34,11 @@ export class PwdResetComponent implements OnInit {
     }
 
     setPwd(credentials){
-      console.log('initial credentials:'+JSON.stringify(credentials));
-      console.log('message is:'+this.message);
+      //console.log('initial credentials:'+JSON.stringify(credentials));
+      //console.log('message is:'+this.message);
       credentials['userName']=this.message;
 
-    console.log('final credentials:'+JSON.stringify(credentials));
+    //console.log('final credentials:'+JSON.stringify(credentials));
         
         var dialog = bootbox.dialog({
           message: '<p><i class="fa fa-spin fa-spinner"></i> resetting password...</p>'
@@ -47,8 +47,8 @@ export class PwdResetComponent implements OnInit {
       dialog.init(()=>{
           setTimeout(()=>{
               this.authService.resetPassword(credentials).subscribe(response=>{
-                  console.log('response:'+JSON.stringify(response));
-                  console.log('status:'+response.status);
+                  //console.log('response:'+JSON.stringify(response));
+                  //console.log('status:'+response.status);
                   if(response.status===201)
                   dialog.find('.bootbox-body').html('<p>Password reset,Kindly login with new password</p>');
                   else

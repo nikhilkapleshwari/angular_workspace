@@ -14,16 +14,16 @@ export class RouteGuardService implements CanActivate{
   routes=['','/','/easytapp','/forgotpwd'];
   canActivate(route:ActivatedRouteSnapshot,state:RouterStateSnapshot,){
     var url=state.url;
-    console.log('url:'+url);
+    //console.log('url:'+url);
     var subUrl=url.substr(0,10);
-    console.log('subUrl:'+subUrl);
+    //console.log('subUrl:'+subUrl);
     var result=this.routes.indexOf(url);
-    console.log('result:'+result);
+    //console.log('result:'+result);
     if(subUrl==='/forgotpwd'){
       var index=url.indexOf("=");
-      console.log('index:'+index);
+      //console.log('index:'+index);
       var token=url.substr(index+1);
-      console.log('token:'+token);
+      //console.log('token:'+token);
       this.forgotPwdService.validateLink(token);
 
       //this.forgotPwdService.validateLink(url);
